@@ -12,32 +12,33 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    //変数
      Chronometer chronometer;
-            ArrayList<Long> logview = new ArrayList<Long>();
-          // Chronometer chronometer = (Chronometer) findViewById(R.id.time);//メーター
+     public TextView tv;
+     public String s;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//変数
-       // ArrayList<Long> i = new ArrayList<Long>();
-         final long[] textl = new long[1];
-
-//インスタンスゾーン
-         chronometer = (Chronometer) findViewById(R.id.time);//メーター
+    //変数
+        final long[] l = {0};
+    //インスタンスゾーン
+        chronometer = (Chronometer) findViewById(R.id.time);//メーター
 
         Button startButton = (Button)findViewById(R.id.b1);//スタートボタン
         Button stopButton = (Button) findViewById(R.id.b2);//ストップボタン
-        Button WrapButton = (Button) findViewById(R.id.b3);//ラップタイム
+        Button wrapButton = (Button) findViewById(R.id.b3);//ラップタイム
+        Button resetButton = (Button) findViewById(R.id.b4);//ラップタイム
 
-         TextView tv = (TextView) findViewById(R.id.log);
+         tv = (TextView) findViewById(R.id.log);
 
-        final ArrayList<Long> logview = new ArrayList<Long>();
+        StringBuilder sb  = new StringBuilder();
 
         //テキスト
-        tv.setText("バイトだるっ");
+        //tv.setText("team ironman");
 
         startButton.setOnClickListener(new View.OnClickListener() {//スタート
             @Override
@@ -49,25 +50,38 @@ public class MainActivity extends AppCompatActivity {
         stopButton.setOnClickListener(new View.OnClickListener() {//ストップ
             @Override
             public void onClick(View v) {
-                chronometer.setBase(SystemClock.elapsedRealtime());
                 chronometer.stop();
             }
         });
 
-//        WrapButton.setOnClickListener(new View.OnClickListener() {//ラップタイム
-//            @Override
-//            public void onClick(View v) {
-////                logview.add(chronometer.getBase());
-////                System.out.println(chronometer.getBase());
-////                System.out.println("ぽいふる");
-////                logview.get(0);
-//
-//               // tv =
-//            }
-//
-//        });
+        wrapButton.setOnClickListener(new View.OnClickListener() {//ラップタイム
+            @Override
+            public void onClick(View v) {
+             //ラップ処理
+                s = settime(chronometer.getBase());
+                tv.setText(s);
 
 
+            }
+
+        });
+
+        resetButton.setOnClickListener(new View.OnClickListener() {//リセット
+            @Override
+            public void onClick(View v) {
+                chronometer.setBase(SystemClock.elapsedRealtime());
+
+            }
+        });
+
+
+    }
+
+
+    //メゾピアノ
+    public String settime(long v){
+        String vv = Long.toString(v);
+        return vv;
     }
 
 }

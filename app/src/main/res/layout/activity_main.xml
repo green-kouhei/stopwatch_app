@@ -23,36 +23,41 @@
         android:text="stop"
         android:id="@+id/b2"
         android:layout_alignTop="@+id/b1"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/time"
+        android:layout_toEndOf="@+id/time" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="start"
         android:id="@+id/b1"
-        android:layout_marginTop="67dp"
         android:layout_below="@+id/time"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/time"
+        android:layout_toLeftOf="@+id/time" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/log"
         android:textSize="24dp"
-        android:layout_below="@+id/b2"
-        android:layout_toLeftOf="@+id/b3"
-        android:layout_toStartOf="@+id/b3" />
+        android:layout_toStartOf="@+id/editText"
+        android:layout_below="@+id/b3"
+        android:layout_toLeftOf="@+id/editText" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Wrap"
         android:id="@+id/b3"
-        android:layout_above="@+id/log"
-        android:layout_alignRight="@+id/time"
-        android:layout_alignEnd="@+id/time" />
+        android:layout_below="@+id/b1"
+        android:layout_alignLeft="@+id/b1"
+        android:layout_alignStart="@+id/b1"
+        android:layout_alignRight="@+id/b1"
+        android:layout_alignEnd="@+id/b1" />
 
     <EditText
         android:layout_width="match_parent"
@@ -61,5 +66,16 @@
         android:layout_toRightOf="@+id/b3"
         android:layout_toEndOf="@+id/b3"
         android:id="@+id/editText" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:id="@+id/b4"
+        android:layout_above="@+id/editText"
+        android:layout_alignLeft="@+id/b2"
+        android:layout_alignStart="@+id/b2"
+        android:layout_alignRight="@+id/b2"
+        android:layout_alignEnd="@+id/b2" />
 
 </RelativeLayout>
