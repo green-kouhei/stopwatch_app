@@ -36,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
 
         final ArrayList<Long> logview = new ArrayList<Long>();
 
+        //テキスト
+        tv.setText("バイトだるっ");
+
         startButton.setOnClickListener(new View.OnClickListener() {//スタート
             @Override
             public void onClick(View v) {

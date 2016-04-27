@@ -23,8 +23,8 @@
         android:text="stop"
         android:id="@+id/b2"
         android:layout_alignTop="@+id/b1"
-        android:layout_alignRight="@+id/log"
-        android:layout_alignEnd="@+id/log" />
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignEnd="@+id/editText" />
 
     <Button
         android:layout_width="wrap_content"
@@ -41,22 +41,25 @@
         android:layout_height="match_parent"
         android:id="@+id/log"
         android:textSize="24dp"
-        android:text="StartTimer!!"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/b2" />
+        android:layout_below="@+id/b2"
+        android:layout_toLeftOf="@+id/b3"
+        android:layout_toStartOf="@+id/b3" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Wrap"
         android:id="@+id/b3"
-        android:layout_alignBottom="@+id/b2"
-        android:layout_alignLeft="@+id/time"
-        android:layout_alignStart="@+id/time"
-        android:layout_alignTop="@+id/b2"
+        android:layout_above="@+id/log"
         android:layout_alignRight="@+id/time"
         android:layout_alignEnd="@+id/time" />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/log"
+        android:layout_toRightOf="@+id/b3"
+        android:layout_toEndOf="@+id/b3"
+        android:id="@+id/editText" />
 
 </RelativeLayout>
