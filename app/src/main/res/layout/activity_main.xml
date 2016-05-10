@@ -9,24 +9,23 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.kouhei.stopwatch_app.MainActivity">
 
-    <Chronometer
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/time"
         android:textSize="64dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="00:00:00"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="stop"
         android:id="@+id/b2"
-        android:layout_alignTop="@+id/b1"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/time"
-        android:layout_toEndOf="@+id/time" />
+        android:layout_below="@+id/time"
+        android:layout_alignRight="@+id/time"
+        android:layout_alignEnd="@+id/time" />
 
     <Button
         android:layout_width="wrap_content"
@@ -34,19 +33,15 @@
         android:text="start"
         android:id="@+id/b1"
         android:layout_below="@+id/time"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/time"
-        android:layout_toLeftOf="@+id/time" />
+        android:layout_alignLeft="@+id/time"
+        android:layout_alignStart="@+id/time" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/log"
         android:textSize="24dp"
-        android:layout_toStartOf="@+id/editText"
-        android:layout_below="@+id/b3"
-        android:layout_toLeftOf="@+id/editText" />
+        android:layout_below="@+id/b3" />
 
     <Button
         android:layout_width="wrap_content"
@@ -59,23 +54,13 @@
         android:layout_alignRight="@+id/b1"
         android:layout_alignEnd="@+id/b1" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignTop="@+id/log"
-        android:layout_toRightOf="@+id/b3"
-        android:layout_toEndOf="@+id/b3"
-        android:id="@+id/editText" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Reset"
         android:id="@+id/b4"
-        android:layout_above="@+id/editText"
-        android:layout_alignLeft="@+id/b2"
-        android:layout_alignStart="@+id/b2"
         android:layout_alignRight="@+id/b2"
-        android:layout_alignEnd="@+id/b2" />
+        android:layout_alignEnd="@+id/b2"
+        android:layout_alignBottom="@+id/b3" />
 
 </RelativeLayout>
